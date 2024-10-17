@@ -1,0 +1,17 @@
+<br><br>
+<div *ngIf="postData" id="webcrumbs"> 
+    <div class="w-[800px] min-h-[600px] bg-white shadow-lg rounded-lg p-6">
+  <ul class="space-y-4">
+    <li class="border-b border-neutral-300 pb-4">
+      <h2 class="text-xl font-semibold text-neutral-950">User ID: {{postData.userId}}</h2>
+      <h3 class="text-lg text-neutral-950">ID: {{postData.id}}</h3>
+      <p class="text-neutral-950">Title: {{postData.title}}</p>
+      <p class="text-neutral-700">Body: {{postData.body}}</p>
+    </li>
+  </ul>
+</div> 
+</div>
+<div *ngIf="!postData" class="loading-text">
+    <br><br><p>Loading...</p>
+</div>
+  
