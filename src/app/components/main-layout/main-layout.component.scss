@@ -1,0 +1,33 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0; 
+  width: 200px;
+  height: 200px;
+  clip-path: polygon(100% 0, 100% 60%, 40% 0); 
+  background-color: #00A19B;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start; 
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.navbar:hover {
+  background-color: #007571; 
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding: 0px;
+}
+
+.logout-icon {
+  width: 32px;
+  height: 32px;
+}

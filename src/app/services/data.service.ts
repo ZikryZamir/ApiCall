@@ -7,11 +7,17 @@ import { Data } from '../interfaces/data';
   providedIn: 'root'
 })
 export class DataService {
-  private apiUrl = 'https://jsonplaceholder.typicode.com/posts';
-
   constructor(private http: HttpClient) {}
 
   getPosts(): Observable<Data[]> {
-    return this.http.get<Data[]>(this.apiUrl);
+    return this.http.get<Data[]>('https://jsonplaceholder.typicode.com/posts');
+  }
+
+  getPostById(id: number): Observable<Data> {
+    return this.http.get<Data>(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  }
+
+  getToken(payload: { email: string; password: string }): Observable<any> {
+    return this.http.post<any>('https://reqres.in/api/login', payload);
   }
 }

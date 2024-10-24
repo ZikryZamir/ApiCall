@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet, Router } from '@angular/router';
 import { DataService } from './services/data.service';
 import { Data } from './interfaces/data';
 import { NgFor } from '@angular/common';
@@ -13,19 +13,5 @@ import { NgFor } from '@angular/common';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  posts: Data[] = [];
-
-  constructor(private dataService: DataService) {
-  }
-
-  ngOnInit() {
-    this.dataService.getPosts().subscribe({
-      next: (response: Data[]) => {
-        this.posts = response;
-      },
-      error: (error: Error) => {
-        console.log(error);
-      }
-    })
-  }
+  title: string = 'Hi'
 }

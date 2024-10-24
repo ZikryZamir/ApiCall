@@ -1,8 +1,6 @@
-@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
-
 @import url(https://fonts.googleapis.com/css2?family=Open+Sans&display=swap);
 
-@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200);
+@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
 
 /*! tailwindcss v3.4.11 | MIT License | https://tailwindcss.com*/
 *,
@@ -330,32 +328,50 @@ video {
   --tw-contain-paint: ;
   --tw-contain-style: ;
 }
+#webcrumbs .mb-4 {
+  margin-bottom: 20px;
+}
+#webcrumbs .mt-1 {
+  margin-top: 5px;
+}
+#webcrumbs .mt-4 {
+  margin-top: 20px;
+}
 #webcrumbs .flex {
   display: flex;
 }
-#webcrumbs .min-h-\[600px\] {
-  min-height: 600px;
+#webcrumbs .min-h-\[400px\] {
+  min-height: 400px;
 }
-#webcrumbs .w-\[800px\] {
-  width: 800px;
+#webcrumbs .w-\[300px\] {
+  width: 300px;
 }
 #webcrumbs .w-full {
   width: 100%;
 }
-#webcrumbs .table-auto {
-  table-layout: auto;
-}
 #webcrumbs .flex-row {
   flex-direction: row;
+}
+#webcrumbs .flex-col {
+  flex-direction: column;
 }
 #webcrumbs .items-center {
   align-items: center;
 }
+#webcrumbs .justify-center {
+  justify-content: center;
+}
 #webcrumbs .justify-between {
   justify-content: space-between;
 }
+#webcrumbs .gap-1 {
+  gap: 5px;
+}
+#webcrumbs .gap-3 {
+  gap: 15px;
+}
 #webcrumbs .gap-4 {
-  gap: 16px;
+  gap: 20px;
 }
 #webcrumbs .rounded-lg {
   border-radius: 24px;
@@ -363,14 +379,14 @@ video {
 #webcrumbs .rounded-md {
   border-radius: 18px;
 }
-#webcrumbs .border-t {
-  border-top-width: 1px;
+#webcrumbs .border {
+  border-width: 1px;
 }
-#webcrumbs .bg-neutral-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(247 247 247 / var(--tw-bg-opacity));
+#webcrumbs .border-primary-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 161 155   / var(--tw-border-opacity));
 }
-#webcrumbs .bg-primary {
+#webcrumbs .bg-primary-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(0 161 155 / var(--tw-bg-opacity));
   transition: background-color 0.3s ease;
@@ -379,26 +395,45 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-#webcrumbs .p-6 {
-  padding: 24px;
+#webcrumbs .p-2 {
+  padding: 10px;
 }
-#webcrumbs .px-4 {
-  padding-left: 16px;
-  padding-right: 16px;
+#webcrumbs .p-6 {
+  padding: 30px;
 }
 #webcrumbs .py-2 {
-  padding-bottom: 8px;
-  padding-top: 8px;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
-#webcrumbs .text-left {
-  text-align: left;
+#webcrumbs .text-center {
+  text-align: center;
 }
-#webcrumbs .text-right {
-  text-align: right;
+#webcrumbs .font-title {
+  font-family:
+    Lato,
+    ui-sans-serif,
+    system-ui,
+    sans-serif,
+    Apple Color Emoji,
+    Segoe UI Emoji,
+    Segoe UI Symbol,
+    Noto Color Emoji;
+}
+#webcrumbs .text-2xl {
+  font-size: 30px;
+  line-height: 40px;
+}
+#webcrumbs .text-sm {
+  font-size: 17.5px;
+  line-height: 25px;
 }
 #webcrumbs .text-neutral-950 {
   --tw-text-opacity: 1;
   color: rgb(10 10 10 / var(--tw-text-opacity));
+}
+#webcrumbs .text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 #webcrumbs .text-white {
   --tw-text-opacity: 1;
@@ -413,27 +448,23 @@ video {
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 #webcrumbs {
-    max-width: 768px;
+    max-width: 640px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 0.5rem;
-  padding-right: 0.5 rem;font-family: Open Sans !important;
-  font-size: 16px !important;
-  line-height: 24px !important;
+  padding-right: 0.5 rem;
+  font-family: Open Sans !important;
+  font-size: 20px !important;
+  line-height: 30px !important;
 }
-#webcrumbs :is(.bg-neutral-100) {
-  color: rgba(0, 0, 0, 0.9) !important;
+#webcrumbs :is(.bg-primary-600) {
+  color: hsla(0, 0%, 100%, 0.9) !important;
+  font-weight: 600;
 }
 
 #webcrumbs .dark:hover {
-  background-color: #007571; 
+  background-color: #007571;
 }
-
-@media (max-width: 768px) {
-    #webcrumbs {
-      max-width: 640px;
-    }
-  }
   @media (max-width: 640px) {
     #webcrumbs {
       max-width: 475px;
@@ -444,3 +475,4 @@ video {
       width: 100%;
     }
   }
+

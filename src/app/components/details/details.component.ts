@@ -3,12 +3,15 @@ import { ActivatedRoute, RouterLink, RouterModule, RouterOutlet } from '@angular
 import { Data } from '../../interfaces/data';
 import { HttpClient } from '@angular/common/http';
 import { NgIf } from '@angular/common';
+import { DataService } from '../../services/data.service';
+import { Location } from '@angular/common';
 
 
 @Component({
   selector: 'app-details',
   standalone: true,
   imports: [RouterLink, RouterOutlet, RouterModule, NgIf],
+  providers: [DataService],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss'
 })
@@ -16,26 +19,24 @@ export class DetailsComponent {
   detailId!: any;
   postData: any;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {
+  constructor(private route: ActivatedRoute, private http: HttpClient, private dataService: DataService, private location: Location) {
     this.route.params.subscribe(params => {
       this.detailId = params['id'];
-      this.fetchPostData();
     });
   }
 
-  ngOnInit(): void {}
-
-  fetchPostData() {
-    const apiUrl = `https://jsonplaceholder.typicode.com/posts/${this.detailId}`;
-
-    this.http.get(apiUrl).subscribe({
-      next: (response) => {
+  ngOnInit(): void {
+    this.dataService.getPostById(this.detailId).subscribe({
+      next: (response: Data) => {
         this.postData = response;
-        console.log('Post Data:', this.postData);
       },
-      error: (error) => {
-        console.error('API error:', error);
+      error: (error: Error) => {
+        console.log(error);
       }
-    });
+    })
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

@@ -1,6 +1,6 @@
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
+import { RouterLink, RouterOutlet, RouterModule, Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 import { Data } from '../../interfaces/data';
 
@@ -15,7 +15,7 @@ import { Data } from '../../interfaces/data';
 export class HomeComponent {
   posts: Data[] = [];
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private router: Router) {
   }
 
   ngOnInit() {
@@ -27,5 +27,10 @@ export class HomeComponent {
         console.log(error);
       }
     })
+  }
+
+  logout() {
+    localStorage.removeItem('authToken');
+    this.router.navigate(['/login']);
   }
 }

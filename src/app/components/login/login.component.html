@@ -1,0 +1,20 @@
+<br><br>
+<div id="webcrumbs"> 
+  <div class="w-[300px] min-h-[400px] bg-white shadow-lg rounded-lg p-6 flex flex-col justify-center">
+    <h1 class="text-2xl font-title text-primary-950 mb-4 text-center">Login</h1>
+    <form (ngSubmit)="login()" class="flex flex-col gap-3">
+      <div class="flex flex-col gap-1">
+        <label class="text-neutral-950" for="email">Email</label>
+        <input [(ngModel)]="email" name="email" class="p-2 border border-primary-500 text-primary-950 rounded-md" type="email" id="email" placeholder="Enter your email"/>
+      </div>
+      <div class="flex flex-col gap-1">
+        <label class="text-neutral-950" for="password">Password</label>
+        <input [(ngModel)]="password" name="password" class="p-2 border border-primary-500 text-primary-950 rounded-md" type="password" id="password" placeholder="Enter your password"/>
+      </div>
+      <div *ngIf="errorMessage" class="text-red-600 text-sm mt-1">{{ errorMessage }}</div>
+      <button class="mt-4 bg-primary-600 text-white py-2 rounded-md text-center w-full dark" type="submit">
+        Log In
+      </button>
+    </form>
+</div> 
+</div>
